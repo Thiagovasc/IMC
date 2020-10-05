@@ -16,7 +16,7 @@ def base_de_dados():
     try:
         arquivo = open(nome_arquivo, 'r')
     except FileNotFoundError:
-        print('Este arquivo não existe, será criado agora', end='')
+        print('Este arquivo não existe, será criado agora')
         arquivo = open(nome_arquivo, 'w')
     else:
         print('Arquivo já existente, iremos adicionar dados a ele!!')
@@ -36,7 +36,7 @@ def cadastro():
         height = float(altura)
         imc = kg/(height*height)
         arquivo = open(nome_arquivo, 'at')
-        arquivo.writelines(f'{nome}; {kg}kg; {height}m; {imc:.2f}\n')
+        arquivo.writelines(f'{nome}; {kg}kg; {height}m; IMC: {imc:.2f}\n')
 
     except FileNotFoundError:
         print('Tivemos um erro, o arquivo não foi encontrado')
